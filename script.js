@@ -59,7 +59,7 @@ siBtn.addEventListener("click", () => {
   // 💡 mensajes dinámicos bien ordenados
   if (contadorNo >= 5) {
     mensajeFinal.innerHTML = `
-      😒 Te hiciste del rogar eh...<br>
+      👉🏼👈🏼 Te costo mucho pero aceptaste<br>
       💜 Pero sabía que caerías 💜<br>
       ✨ te amodoro ✨
     `;
@@ -72,7 +72,7 @@ siBtn.addEventListener("click", () => {
   }
     if (contadorNo >= 8) {
   mensajeFinal.innerHTML = `
-    💀 Ya era para que hubieras dicho que sí...<br>
+    💀 Pensé que no dirias que si....<br>
     💜 pero igual te quiero 💜<br>
     ✨ te amodoro ✨
   `;
