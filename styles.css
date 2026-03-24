@@ -44,17 +44,57 @@ body::before {
 
 /* CONTENEDOR */
 .container {
-  background: white;
-  width: min(90%, 650px); /*  clave */
+  width: min(90%, 650px);
   padding: clamp(20px, 5vw, 35px);
-  border-radius: 20px;
+  border-radius: 25px;
   text-align: center;
 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  /* EFECTO GLASS */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 
-  margin: auto;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.2),
+    inset 0 0 10px rgba(255,255,255,0.2);
+
   position: relative;
   z-index: 1;
+
+  /* ANIMACIÓN DE ENTRADA */
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+
+  transform: rotate(25deg);
+  pointer-events: none;
 }
 
 /*  EFECTOS */
@@ -88,6 +128,15 @@ body::before {
     transform: translateY(-120vh) translateX(-20px) scale(1.5);
     opacity: 0;
   }
+}
+
+.cat {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 15px;
+  margin-top: 15px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /*  Brillos */
