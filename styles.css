@@ -1,3 +1,8 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -6,59 +11,95 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 10px;
 }
+
 
 .container {
   background: white;
-  width: 90%;
+  width: 100%;
   max-width: 500px;
-  padding: 20px;
+  padding: clamp(15px, 3vw, 25px);
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+
 .hidden {
   display: none;
 }
 
+
+h1 {
+  font-size: clamp(20px, 5vw, 28px);
+  margin-bottom: 10px;
+}
+
+/* Botones */
 .botones {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 15px;
   margin: 20px 0;
   flex-wrap: wrap;
-  gap: 10px;
 }
 
+/* Botón base */
 .button {
   border: none;
-  padding: 15px 25px;
+  padding: clamp(10px, 2.5vw, 15px) clamp(15px, 4vw, 25px);
   border-radius: 15px;
-  font-size: 18px;
+  font-size: clamp(14px, 4vw, 18px);
   cursor: pointer;
   transition: all 0.3s ease;
+  min-width: 120px;
 }
 
+/* Botón SI */
 .si-button {
   background: #ff6b81;
   color: white;
 }
 
+/* Botón NO */
 .no-button {
   background: gray;
   color: white;
   position: relative;
 }
 
+/* Imagen */
 .cat {
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
+  height: auto;
   border-radius: 10px;
+  margin-top: 10px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
+  .botones {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .button {
     width: 100%;
+    max-width: 250px;
+  }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    max-width: 400px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 550px;
   }
 }
