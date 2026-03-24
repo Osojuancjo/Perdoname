@@ -28,10 +28,10 @@ function reproducirConFade(src) {
   }, 100);
 }
 
-// ❌ Botón NO
+// Botón NO
 noBtn.addEventListener("click", () => {
   dioNo = true;
-  contadorNo++; // 👈 contar clics
+  contadorNo++; // contar clics
 
   if (!musicaIniciada) {
     reproducirConFade("audio/cd9.mp3");
@@ -46,17 +46,17 @@ noBtn.addEventListener("click", () => {
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-// 💜 Botón SI
+// Botón SI
 siBtn.addEventListener("click", () => {
   container1.classList.add("hidden");
   container2.classList.remove("hidden");
 
   if (!musicaIniciada) {
-    reproducirConFade("audio/vinculo.mp3");
+    reproducirConFade("audio/enjambre.mp3");
     musicaIniciada = true;
   }
 
-  // 💡 mensajes dinámicos bien ordenados
+  // mensajes dinámicos 
   if (contadorNo >= 5) {
     mensajeFinal.innerHTML = `
       👉🏼👈🏼 Te costo mucho pero aceptaste<br>
@@ -81,7 +81,7 @@ siBtn.addEventListener("click", () => {
   iniciarLluvia();
 });
 
-// 🌧️ lluvia infinita
+// lluvia infinita de corazones
 function iniciarLluvia() {
   if (lluviaActiva) return;
   lluviaActiva = true;
@@ -98,7 +98,7 @@ function crearCorazon() {
 
   heart.style.left = Math.random() * 100 + "vw";
 
-  // 🔥 IMPORTANTE: nacen abajo
+  //  nacimiento de corazón desde abajo
   heart.style.top = "100vh";
 
   heart.style.fontSize = (Math.random() * 20 + 15) + "px";
@@ -109,7 +109,7 @@ function crearCorazon() {
   setTimeout(() => heart.remove(), 5000);
 }
 
-// ✨ brillos
+// brillos
 function crearBrillo() {
   const sparkle = document.createElement("div");
   sparkle.classList.add("sparkle");
