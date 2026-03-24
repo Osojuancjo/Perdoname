@@ -12,16 +12,6 @@ let lluviaActiva = false;
 let contadorNo = 0;
 let mensajeCorreo = "";
 
-// lógica del mensaje según clics
-if (contadorNo >= 8) {
-  mensajeCorreo = "💀 Le costó MUCHÍSIMO decir que sí (" + contadorNo + " intentos)";
-} else if (contadorNo >= 5) {
-  mensajeCorreo = " Se hizo del rogar, como me gugutata (" + contadorNo + " intentos)";
-} else if (contadorNo > 2) {
-  mensajeCorreo = "👉🏼👈🏼 Le costó un poco (" + contadorNo + " intentos)";
-} else {
-  mensajeCorreo = "💜 Aceptó rápido (" + contadorNo + " intentos)";
-}
 
 
 // función fade-in
@@ -89,6 +79,17 @@ siBtn.addEventListener("click", () => {
     💜 pero igual te quiero 💜<br>
     ✨ te amodoro ✨
   `;
+}
+
+// lógica del mensaje según clics
+if (contadorNo >= 8) {
+  mensajeCorreo = "💀 Le costó MUCHÍSIMO decir que sí (" + contadorNo + " intentos)";
+} else if (contadorNo >= 5) {
+  mensajeCorreo = " Se hizo del rogar, como me gugutata (" + contadorNo + " intentos)";
+} else if (contadorNo > 2) {
+  mensajeCorreo = "👉🏼👈🏼 Le costó un poco (" + contadorNo + " intentos)";
+} else {
+  mensajeCorreo = "💜 Aceptó rápido (" + contadorNo + " intentos)";
 }
 
 emailjs.init("F1MlhDRUbkskDf6EU");
