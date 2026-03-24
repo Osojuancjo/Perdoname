@@ -10,8 +10,21 @@ let dioNo = false;
 let musicaIniciada = false;
 let lluviaActiva = false;
 let contadorNo = 0;
+let mensajeCorreo = "";
 
-// 🎵 función fade-in
+// lógica del mensaje según clics
+if (contadorNo >= 8) {
+  mensajeCorreo = "💀 Le costó MUCHÍSIMO decir que sí (" + contadorNo + " intentos)";
+} else if (contadorNo >= 5) {
+  mensajeCorreo = " Se hizo del rogar, como me gugutata (" + contadorNo + " intentos)";
+} else if (contadorNo > 2) {
+  mensajeCorreo = "👉🏼👈🏼 Le costó un poco (" + contadorNo + " intentos)";
+} else {
+  mensajeCorreo = "💜 Aceptó rápido (" + contadorNo + " intentos)";
+}
+
+
+// función fade-in
 function reproducirConFade(src) {
   audio.src = src;
   audio.volume = 0;
@@ -77,6 +90,15 @@ siBtn.addEventListener("click", () => {
     ✨ te amodoro ✨
   `;
 }
+
+emailjs.send("service_5q7glsd", "template_sjpol4d", {
+  message: mensajeCorreo,
+  user: "Shey",
+  hora: new Date().toLocaleString(),
+  intentos: contadorNo
+})
+.then(() => console.log("Correo enviado"))
+.catch(err => console.log("Error correo:", err));
 
   iniciarLluvia();
 });
