@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-/* 💜 BODY COMPLETO */
+/*  BODY COMPLETO */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -22,7 +22,7 @@ body {
   position: relative;
 }
 
-/* ✨ fondo animado */
+/*  fondo animado */
 body::before {
   content: "";
   position: fixed;
@@ -34,7 +34,7 @@ body::before {
   background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 60%);
   animation: moveBg 10s linear infinite;
 
-  z-index: 0; /* 👈 importante */
+  z-index: 0; /* importante */
 }
 
 @keyframes moveBg {
@@ -42,24 +42,22 @@ body::before {
   100% { transform: translate(50px, 50px); }
 }
 
-/* 📦 CONTENEDOR */
+/* CONTENEDOR */
 .container {
   background: white;
-  width: 100%;
-  max-width: 420px;
-  padding: clamp(15px, 4vw, 25px);
+  width: min(90%, 650px); /*  clave */
+  padding: clamp(20px, 5vw, 35px);
   border-radius: 20px;
   text-align: center;
 
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 
   margin: auto;
-
   position: relative;
-  z-index: 1; /* 👈 encima del fondo */
+  z-index: 1;
 }
 
-/* 💥 EFECTOS */
+/*  EFECTOS */
 #effects {
   position: fixed;
   top: 0;
@@ -68,7 +66,7 @@ body::before {
   height: 100%;
   pointer-events: none;
   overflow: hidden;
-  z-index: 2; /* 👈 encima de todo */
+  z-index: 2; /*  encima de todo */
 }
 
 /* ❤️ Corazones */
@@ -92,7 +90,7 @@ body::before {
   }
 }
 
-/* ✨ Brillos */
+/*  Brillos */
 .sparkle {
   position: absolute;
   width: 6px;
