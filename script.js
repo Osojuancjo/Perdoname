@@ -91,6 +91,8 @@ siBtn.addEventListener("click", () => {
   `;
 }
 
+emailjs.init("F1MlhDRUbkskDf6EU");
+
 emailjs.send("service_5q7glsd", "template_sjpol4d", {
   message: mensajeCorreo,
   user: "Shey",
